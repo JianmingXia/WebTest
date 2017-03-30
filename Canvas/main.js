@@ -11,7 +11,7 @@ class Circle{
 		ctx.beginPath();
 		ctx.arc(this.x, this.y, this.r, 0, 360);
 		ctx.closePath();
-		ctx.fillStyle = 'rgba(204, 204, 204, 0.2)';
+		ctx.fillStyle = 'rgba(204, 204, 204, 0.5)';
 		ctx.fill();
 	}
 
@@ -24,7 +24,7 @@ class Circle{
 			ctx.moveTo(this.x, this.y);//起始点
 			ctx.lineTo(_circle.x, _circle.y);//终点
 			ctx.closePath();
-			ctx.strokeStyle = 'rgba(204, 204, 204, 0.1)';
+			ctx.strokeStyle = 'rgba(204, 204, 204, 0.2)';
 			ctx.stroke();
 		}
 	}
@@ -53,8 +53,8 @@ class currentCircle extends Circle {
 }
 
 
-
-window.requestAnimationFrame = window.requestAnimationFrame || window.mozRequestAnimationFrame || window.webkitRequestAnimationFrame || window.msRequestAnimationFrame;
+debugger;
+// window.requestAnimationFrame = window.requestAnimationFrame || window.mozRequestAnimationFrame || window.webkitRequestAnimationFrame || window.msRequestAnimationFrame;
 let canvas = document.querySelector("#canvas");
 let ctx = canvas.getContext("2d");
 let w = canvas.width =  canvas.offsetWidth;
@@ -71,6 +71,7 @@ let draw = function(){
 			circles[i].drawLine(ctx, circles[j])
 		}
 	}
+
 	if(current_circle.x){
 		current_circle.drawCircle(ctx);
 		for(var k = 1; k < circles.length; k++) {
@@ -88,6 +89,7 @@ let init = function(num){
 }
 
 window.addEventListener('load', init(80));
+
 window.onmousemove = function(e) {
     e = e || window.event;
     current_circle.x = e.clientX;
