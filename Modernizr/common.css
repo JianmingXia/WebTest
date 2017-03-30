@@ -1,0 +1,8 @@
+#nice {
+    background: url(ryoma_1.jpg) top left repeat-x;
+}
+
+.multiplebgs #nice {
+    background: url(ryoma_1.jpg) top left repeat-x,
+    url(ryoma_2.jpg) bottom left repeat-x;
+}
